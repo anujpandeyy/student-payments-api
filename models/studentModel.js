@@ -12,6 +12,10 @@ const studentSchema = mongoose.Schema({
     type: Date,
     required:[true,"Year is required"],
    },
+   phone:{
+    type: Number,
+    required:[true,"Phone is required"],
+   },
    fees:{
     type: Number,
     required:[true,"Fees is required"],
