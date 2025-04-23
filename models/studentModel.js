@@ -20,6 +20,10 @@ const studentSchema = mongoose.Schema({
     type: Number,
     required:[true,"Fees is required"],
    },
+   feesPaid:{
+    type: Boolean,
+    default: false,
+   }
 },{
     timestamps:true,
 });
