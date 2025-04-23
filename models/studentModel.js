@@ -9,11 +9,11 @@ const studentSchema = mongoose.Schema({
     required:[true,"Stream is required"],
    },
    year:{
-    type: Date,
+    type: Number,
     required:[true,"Year is required"],
    },
    phone:{
-    type: Number,
+    type: String,
     required:[true,"Phone is required"],
    },
    fees:{
@@ -23,7 +23,23 @@ const studentSchema = mongoose.Schema({
    feesPaid:{
     type: Boolean,
     default: false,
-   }
+   },
+   paymentHistory: [
+    {
+        amountPaid: {
+          type: Number,
+          required: true,
+        },
+        date: { 
+          type: Date, 
+          default: Date.now,
+        },
+        remainingBalance: {
+          type: Number,
+          required: true,
+        },
+      }
+  ],
 },{
     timestamps:true,
 });
